@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Adicionar contato</title>
+
+		<link rel="stylesheet" href="./css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="shortcut icon" href="./img/site-icon.png" type="image/x-icon" />
+
+        <script src="./js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-dark bg-dark">
+			<a class="navbar-brand p-2" href="./index.html">
+				<img src="./img/agenda_icon_129512.png"
+					alt="Ícone agenda" class="icon"
+				/>
+			</a>
+
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+                    <a class="nav-link text-light" href="./view_contacts.html">
+                        Meus contatos
+                    </a>
+				</li>
+			</ul>
+		</nav>
+
+		<section class="container my-5">
+            <h1 class="text-center">Adicionar contato</h1>
+            <div class="row">
+                <form method="POST" class="w-100">
+                    <div class="form-group mb-4">
+                        <label for="input-nome">Nome</label>
+                        <input type="text" name="nome" id="input-nome" 
+                        class="form-control form-control-lg" placeholder="Nome completo">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="input-email">E-mail</label>
+                        <input type="email" name="email" id="input-email" 
+                        class="form-control form-control-lg" placeholder="E-mail">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="input-telefone">Telefone</label>
+                        <input type="tel" name="telefone" id="input-telefone" 
+                        class="form-control form-control-lg" placeholder="Telefone">
+                    </div>
+
+                    <button type="submit" class="btn btn-lg btn-dark w-25 float-right mt-4">
+                        Salvar
+                    </button>
+                </form>
+            </div>
+        </section>
+
+		<footer class="navbar navbar-dark bg-dark text-light p-4 d-block">
+			<h3 class="text-center">Desenvolvido por Anderson Pontes</h3>
+			<div class="row d-flex mt-4 mb-2 justify-content-center">
+                <div class="px-5">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <a href="tel:47992514997"
+                        class="text-reset text-decoration-none" target="_blank">
+                        Telefone
+                    </a>    
+                </div>
+                <div class="px-4">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <a href="email:andersonpbatalha@gmail.com"
+                        class="text-reset text-decoration-none" target="_blank">
+                        E-mail
+                    </a>    
+                </div>
+                <div class="px-4">
+                    <ion-icon name="logo-github"></ion-icon>
+                    <a href="https://github.com/AndersonBatalha"
+                        class="text-reset text-decoration-none" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+                <div class="px-4">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                    <a href="https://www.linkedin.com/in/anderson-pontes-batalha/"
+                        class="text-reset text-decoration-none" target="_blank">
+                        Linkedin
+                    </a>    
+                </div>
+                <div class="px-4">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                    <a href="https://www.facebook.com/profile.php?id=100002347075937"
+                        class="text-reset text-decoration-none" target="_blank">
+                        Facebook
+                    </a>   
+                </div>
+                <div class="px-4">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <a href="https://twitter.com/BatalhaAnderson"
+                        class="text-reset text-decoration-none" target="_blank">
+                        Twitter
+                    </a>   
+                </div>
+            </div>
+		</footer>
+
+		<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+	</body>
+</html>
