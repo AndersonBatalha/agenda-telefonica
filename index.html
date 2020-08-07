@@ -9,28 +9,42 @@
 		<link rel="stylesheet" href="./css/style.css" />
 		<link rel="shortcut icon" href="./img/site-icon.png" type="image/x-icon" />
 
-        <script src="./js/bootstrap.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand p-2" href="./index.html">
-				<img src="./img/agenda_icon_129512.png"
-					alt="Ícone agenda" class="icon"
+            <a class="navbar-brand p-2" href="./index.html">
+				<img
+					src="./img/agenda_icon_129512.png"
+					alt="Ícone agenda"
+					class="icon"
 				/>
 			</a>
 
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link text-light" href="#">Meus contatos</a>
-				</li>
+                <div class="row">                
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-light" href="./view_contacts.html">
+                            Meus contatos
+                        </a>    
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-light" href="./create_contact.html">
+                            Novo contato
+                        </a>    
+                    </li>
+                </div>
 			</ul>
 		</nav>
 
 		<section class="container mr-auto">
 			<div class="row p-5">
 				<div class="col-md-6 col-sm-12 pb-4">
-					<img class="mx-auto d-block my-2" src="./img/site-icon-512.png"
-						alt="Agenda" id="agenda"
+					<img
+						class="mx-auto d-block my-2"
+						src="./img/site-icon-512.png"
+						alt="Agenda"
+						id="agenda"
 					/>
 				</div>
 
@@ -52,49 +66,67 @@
 		<footer class="navbar navbar-dark bg-dark text-light p-4 d-block">
 			<h3 class="text-center">Desenvolvido por Anderson Pontes</h3>
 			<div class="row d-flex mt-4 mb-2 justify-content-center">
-                <div class="px-5">
-                    <ion-icon name="call-outline"></ion-icon>
-                    <a href="tel:47992514997"
-                        class="text-reset text-decoration-none" target="_blank">
-                        Telefone
-                    </a>    
-                </div>
-                <div class="px-4">
-                    <ion-icon name="mail-outline"></ion-icon>
-                    <a href="email:andersonpbatalha@gmail.com"
-                        class="text-reset text-decoration-none" target="_blank">
-                        E-mail
-                    </a>    
-                </div>
-                <div class="px-4">
-                    <ion-icon name="logo-github"></ion-icon>
-                    <a href="https://github.com/AndersonBatalha"
-                        class="text-reset text-decoration-none" target="_blank">
-                        GitHub
-                    </a>
-                </div>
-                <div class="px-4">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                    <a href="https://www.linkedin.com/in/anderson-pontes-batalha/"
-                        class="text-reset text-decoration-none" target="_blank">
-                        Linkedin
-                    </a>    
-                </div>
-                <div class="px-4">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                    <a href="https://www.facebook.com/profile.php?id=100002347075937"
-                        class="text-reset text-decoration-none" target="_blank">
-                        Facebook
-                    </a>   
-                </div>
-                <div class="px-4">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                    <a href="https://twitter.com/BatalhaAnderson"
-                        class="text-reset text-decoration-none" target="_blank">
-                        Twitter
-                    </a>   
-                </div>
-            </div>
+				<div class="px-5">
+					<ion-icon name="call-outline"></ion-icon>
+					<a
+						href="tel:47992514997"
+						class="text-reset text-decoration-none"
+						target="_blank"
+					>
+						Telefone
+					</a>
+				</div>
+				<div class="px-4">
+					<ion-icon name="mail-outline"></ion-icon>
+					<a
+						href="email:andersonpbatalha@gmail.com"
+						class="text-reset text-decoration-none"
+						target="_blank"
+					>
+						E-mail
+					</a>
+				</div>
+				<div class="px-4">
+					<ion-icon name="logo-github"></ion-icon>
+					<a
+						href="https://github.com/AndersonBatalha"
+						class="text-reset text-decoration-none"
+						target="_blank"
+					>
+						GitHub
+					</a>
+				</div>
+				<div class="px-4">
+					<ion-icon name="logo-linkedin"></ion-icon>
+					<a
+						href="https://www.linkedin.com/in/anderson-pontes-batalha/"
+						class="text-reset text-decoration-none"
+						target="_blank"
+					>
+						Linkedin
+					</a>
+				</div>
+				<div class="px-4">
+					<ion-icon name="logo-facebook"></ion-icon>
+					<a
+						href="https://www.facebook.com/profile.php?id=100002347075937"
+						class="text-reset text-decoration-none"
+						target="_blank"
+					>
+						Facebook
+					</a>
+				</div>
+				<div class="px-4">
+					<ion-icon name="logo-twitter"></ion-icon>
+					<a
+						href="https://twitter.com/BatalhaAnderson"
+						class="text-reset text-decoration-none"
+						target="_blank"
+					>
+						Twitter
+					</a>
+				</div>
+			</div>
 		</footer>
 
 		<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
