@@ -1,7 +1,10 @@
 function loadContacts() {
     var contatos = [];
-    for (var i = 0; i < localStorage.length; i++) {
-        contatos.push(localStorage.getItem(i));
+    for (var i = 0; i <= localStorage.length; i++) {
+        let item = localStorage.getItem(i);
+        if (item !== null && item !== undefined && item.startsWith("{")) {
+            contatos.push(item);
+        }
     }
 	if (contatos === null) {
 		return [];
@@ -11,7 +14,7 @@ function loadContacts() {
 }
 
 function getSelectedItem(id) {
-    localStorage.setItem("id", id);
+    localStorage.setItem("editID", id);
     return id;
 }
 
@@ -27,11 +30,11 @@ $(document).ready(function () {
     let section = $("section");
 
     let contatos = loadContacts();
+    console.log(contatos);
     if (contatos.length > 0) {
         section.append(`<h1 class="text-center my-5">Contatos</h1>`);
         for (var i in contatos) {
             let contato = JSON.parse(contatos[i]);
-            console.log(contato);
             section.append(`
             <div class="border border-dark p-3 my-4 w-100 mx-auto rounded">
                 <div class="row">
@@ -68,28 +71,28 @@ $(document).ready(function () {
 	} else {
         section.append(`
             <div class="row p-5">
-            <div class="col-md-6 col-sm-12 pb-4">
-                <img
-                    class="mx-auto d-block my-2"
-                    src="./img/site-icon-512.png"
-                    alt="Agenda"
-                    id="agenda"
-                />
-            </div>
+                <div class="col-md-6 col-sm-12 pb-4">
+                    <img
+                        class="mx-auto d-block my-2"
+                        src="./img/site-icon-512.png"
+                        alt="Agenda"
+                        id="agenda"
+                    />
+                </div>
 
-            <div class="col-md-6 col-sm-12 align-middle">
-                <h1 class="d-flex-row mb-4 text-center">Agenda</h1>
+                <div class="col-md-6 col-sm-12 align-middle">
+                    <h1 class="d-flex-row mb-4 text-center">Agenda</h1>
 
-                <ul class="list-group-flush">
-                    <li class="list-group-item">Inserir novo contato</li>
-                    <li class="list-group-item">Excluir contatos</li>
-                    <li class="list-group-item">Editar contatos</li>
-                    <li class="list-group-item">
-                        Visualizar todos os contatos
-                    </li>
-                </ul>
+                    <ul class="list-group-flush">
+                        <li class="list-group-item">Inserir novo contato</li>
+                        <li class="list-group-item">Excluir contatos</li>
+                        <li class="list-group-item">Editar contatos</li>
+                        <li class="list-group-item">
+                            Visualizar todos os contatos
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
         `);
     };
 });

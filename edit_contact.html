@@ -44,7 +44,7 @@
 		<section class="container my-5">
 			<h1 class="text-center">Editar contato</h1>
 			<div class="row">
-				<form method="POST" class="w-100">
+				<form method="POST" action="./index.html" class="w-100">
 					<div class="form-group mb-4">
 						<label for="input-nome">Nome</label>
 						<input
@@ -52,8 +52,8 @@
 							name="nome"
 							id="input-nome"
 							class="form-control form-control-lg"
-                            placeholder="Nome completo"
-                            required
+							placeholder="Nome completo"
+							required
 						/>
 					</div>
 					<div class="form-group mb-4">
@@ -64,7 +64,7 @@
 							id="input-email"
 							class="form-control form-control-lg"
 							placeholder="E-mail"
-                            required
+							required
 						/>
 					</div>
 					<div class="form-group mb-4">
@@ -75,10 +75,9 @@
 							id="input-telefone"
 							class="form-control form-control-lg"
 							placeholder="Telefone"
-                            required
+							required
 						/>
 					</div>
-
 					<button
 						type="submit"
 						class="btn btn-lg btn-dark w-25 float-right mt-4"
