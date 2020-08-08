@@ -6,7 +6,7 @@ $(document).ready(function () {
     let nome = $("#input-nome");
     let telefone = $("#input-telefone");
     let email = $("#input-email");
-    let btnSubmit = $("button[type='submit'");
+    let btnSubmit = $("button[type='submit']");
 
     nome.val(contato.nome);
     email.val(contato.email);

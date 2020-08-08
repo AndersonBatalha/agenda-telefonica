@@ -4,7 +4,6 @@ function generateID() {
 }
 
 $(document).ready(function () {
-    
     let nome = $("#input-nome");
     let telefone = $("#input-telefone");
     let email = $("#input-email");

@@ -13,24 +13,21 @@ function loadContacts() {
 	}
 }
 
-function getSelectedItem(id) {
+function getSelectedId(id) {
+    console.log("editID", id);
     localStorage.setItem("editID", id);
     return id;
 }
 
 function removeItem(id) {
-    let contatos = JSON.parse(loadContacts());
-
-    console.log(contatos, contatos.length, id);
-
-    return contatos;
+    localStorage.removeItem(id);
+    localStorage.removeItem("editID");
 }
 
 $(document).ready(function () {    
     let section = $("section");
 
     let contatos = loadContacts();
-    console.log(contatos);
     if (contatos.length > 0) {
         section.append(`<h1 class="text-center my-5">Contatos</h1>`);
         for (var i in contatos) {
@@ -54,12 +51,12 @@ $(document).ready(function () {
                     </div>
                     <div class="col-3 my-auto">
                         <a href="./edit_contact.html" 
-                            onclick=getSelectedItem(${contato.id})>
+                            onclick=getSelectedId(${contato.id})>
                             <img src="./img/edit_icon.png" 
                             class="edit px-2" alt="Edit icon" />
                         </a>
-                        <a 
-                            onclick=removeItem(getSelectedItem(${contato.id}))>
+                        <a href="./index.html"
+                            onclick=removeItem(getSelectedId(${contato.id}))>
                             <img src="./img/trash.png" 
                             class="trash px-2" alt="Trash icon" />    
                         </a>
