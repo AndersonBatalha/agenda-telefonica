@@ -9,7 +9,9 @@
 		<link rel="stylesheet" href="./css/style.css" />
 		<link rel="shortcut icon" href="./img/site-icon.png" type="image/x-icon" />
 
-		<script src="./js/bootstrap.min.js"></script>
+        <script src="./js/jquery-3.5.1.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/contacts.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-dark bg-dark">
@@ -24,11 +26,6 @@
 			<ul class="navbar-nav mr-auto">
                 <div class="row">                
                     <li class="nav-item mx-4">
-                        <a class="nav-link text-light" href="./view_contacts.html">
-                            Meus contatos
-                        </a>    
-                    </li>
-                    <li class="nav-item mx-4">
                         <a class="nav-link text-light" href="./create_contact.html">
                             Novo contato
                         </a>    
@@ -38,97 +35,58 @@
 		</nav>
 
 		<section class="container mr-auto">
-			<div class="row p-5">
-				<div class="col-md-6 col-sm-12 pb-4">
-					<img
-						class="mx-auto d-block my-2"
-						src="./img/site-icon-512.png"
-						alt="Agenda"
-						id="agenda"
-					/>
-				</div>
 
-				<div class="col-md-6 col-sm-12 align-middle">
-					<h1 class="d-flex-row mb-4 text-center">Agenda</h1>
-
-					<ul class="list-group-flush">
-						<li class="list-group-item">Inserir novo contato</li>
-						<li class="list-group-item">Excluir contatos</li>
-						<li class="list-group-item">Editar contatos</li>
-						<li class="list-group-item">
-							Visualizar todos os contatos
-						</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+        </section>
 
 		<footer class="navbar navbar-dark bg-dark text-light p-4 d-block">
 			<h3 class="text-center">Desenvolvido por Anderson Pontes</h3>
 			<div class="row d-flex mt-4 mb-2 justify-content-center">
 				<div class="px-5">
-					<ion-icon name="call-outline"></ion-icon>
-					<a
-						href="tel:47992514997"
-						class="text-reset text-decoration-none"
-						target="_blank"
-					>
+					<ion-icon name="call"></ion-icon>
+					<a href="tel:47992514997"
+						class="text-reset text-decoration-none" target="_blank">
 						Telefone
 					</a>
 				</div>
-				<div class="px-4">
-					<ion-icon name="mail-outline"></ion-icon>
-					<a
-						href="email:andersonpbatalha@gmail.com"
-						class="text-reset text-decoration-none"
-						target="_blank"
-					>
+				<div class="px-5">
+					<ion-icon name="mail"></ion-icon>
+					<a href="email:andersonpbatalha@gmail.com"
+						class="text-reset text-decoration-none" target="_blank">
 						E-mail
 					</a>
 				</div>
-				<div class="px-4">
+				<div class="px-5">
 					<ion-icon name="logo-github"></ion-icon>
-					<a
-						href="https://github.com/AndersonBatalha"
-						class="text-reset text-decoration-none"
-						target="_blank"
-					>
+					<a href="https://github.com/AndersonBatalha"
+						class="text-reset text-decoration-none" target="_blank">
 						GitHub
 					</a>
 				</div>
-				<div class="px-4">
+				<div class="px-5">
 					<ion-icon name="logo-linkedin"></ion-icon>
-					<a
-						href="https://www.linkedin.com/in/anderson-pontes-batalha/"
-						class="text-reset text-decoration-none"
-						target="_blank"
-					>
+					<a href="https://www.linkedin.com/in/anderson-pontes-batalha/"
+						class="text-reset text-decoration-none" target="_blank">
 						Linkedin
 					</a>
 				</div>
-				<div class="px-4">
+				<div class="px-5">
 					<ion-icon name="logo-facebook"></ion-icon>
-					<a
-						href="https://www.facebook.com/profile.php?id=100002347075937"
-						class="text-reset text-decoration-none"
-						target="_blank"
-					>
+					<a href="https://www.facebook.com/profile.php?id=100002347075937"
+						class="text-reset text-decoration-none" target="_blank">
 						Facebook
 					</a>
 				</div>
-				<div class="px-4">
+				<div class="px-5">
 					<ion-icon name="logo-twitter"></ion-icon>
-					<a
-						href="https://twitter.com/BatalhaAnderson"
-						class="text-reset text-decoration-none"
-						target="_blank"
-					>
+					<a href="https://twitter.com/BatalhaAnderson"
+						class="text-reset text-decoration-none" target="_blank">
 						Twitter
 					</a>
 				</div>
 			</div>
 		</footer>
 
-		<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js">
+        </script>
 	</body>
 </html>
