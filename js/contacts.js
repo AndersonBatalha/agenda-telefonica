@@ -81,9 +81,18 @@ $(document).ready(function () {
                     <h1 class="d-flex-row mb-4 text-center">Agenda</h1>
 
                     <ul class="list-group-flush">
-                        <li class="list-group-item">Inserir novo contato</li>
-                        <li class="list-group-item">Excluir contatos</li>
-                        <li class="list-group-item">Editar contatos</li>
+                        <li class="list-group-item">
+                            <a href="./create_contact.html" 
+                                class="text-reset">
+                                Inserir novo contato
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            Excluir contatos
+                        </li>
+                        <li class="list-group-item">
+                            Editar contatos
+                        </li>
                         <li class="list-group-item">
                             Visualizar todos os contatos
                         </li>

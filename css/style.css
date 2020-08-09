@@ -1,7 +1,13 @@
+@font-face {
+    src: url('./fonts/texgyreadventor-regular.otf');
+    font-family: "Avant Garde Gothic";
+}
+
 body {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+    font-family: "Avant Garde Gothic";
 }
 
 .icon {
