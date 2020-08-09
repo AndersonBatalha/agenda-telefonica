@@ -29,27 +29,33 @@ $(document).ready(function () {
 
     let contatos = loadContacts();
     if (contatos.length > 0) {
-        section.append(`<h1 class="text-center my-5">Contatos</h1>`);
+        section.append(`
+            <h1 class="text-center my-5">
+                Contatos
+            </h1>`);
         for (var i in contatos) {
             let contato = JSON.parse(contatos[i]);
             section.append(`
             <div class="border border-dark p-3 my-4 w-100 mx-auto rounded">
-                <div class="row">
-                    <div class="col-2 my-auto">
+                <div class="row text-center text-sm-center text-xl-justify">
+                    <div class="col-sm-12 col-md-2 col-xl-2 col-lg-2 
+                            mx-auto mx-sm-auto my-xl-auto my-lg-auto my-2 my-sm-2">
                         <img src="./img/person.png" class="person" alt="Contact" />
                     </div>
-                    <div class="col-7 my-auto">
-                        <h2 class="font-weight-bolder">
+                    <div class="col-sm-12 col-md-8 col-xl-7 col-lg-7 
+                                my-xl-auto my-lg-auto my-2 my-sm-2">
+                        <h2 class="font-weight-bolder text-wrap text-break">
                             ${contato.nome}
                         </h2>
-                        <h4>
+                        <h4 class="text-wrap text-break">
                             ${contato.email}
                         </h4>
-                        <h6>
+                        <h5 class="text-wrap text-break">
                             ${contato.telefone}
-                        </h6>
+                        </h5>
                     </div>
-                    <div class="col-3 my-auto">
+                    <div class="col-sm-12 col-md-2 col-xl-3 col-lg-3 
+                                my-xl-auto my-lg-auto my-2 my-sm-2">
                         <a href="./edit_contact.html" 
                             onclick=getSelectedId(${contato.id})>
                             <img src="./img/edit_icon.png" 
@@ -67,8 +73,8 @@ $(document).ready(function () {
         };
 	} else {
         section.append(`
-            <div class="row p-5">
-                <div class="col-md-6 col-sm-12 pb-4">
+            <div class="row p-5 d-flex">
+                <div class="col-md-6 col-sm-12 pb-sm-5 pb-5 justify-content-center">
                     <img
                         class="mx-auto d-block my-2"
                         src="./img/site-icon-512.png"
@@ -77,7 +83,7 @@ $(document).ready(function () {
                     />
                 </div>
 
-                <div class="col-md-6 col-sm-12 align-middle">
+                <div class="col-md-6 col-sm-12 justify-content-center">
                     <h1 class="d-flex-row mb-4 text-center">Agenda</h1>
 
                     <ul class="list-group-flush">
