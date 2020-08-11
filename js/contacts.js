@@ -1,8 +1,9 @@
 function loadContacts() {
     var contatos = [];
-    for (var i = 0; i <= localStorage.length; i++) {
-        let item = localStorage.getItem(i);
-        if (item !== null && item !== undefined && item.startsWith("{")) {
+    const keys = Object.keys(localStorage);
+    for (var i = 0; i <= keys.length; i++) {
+        let item = localStorage.getItem(parseInt(keys[i]));
+        if ( item !== null && item !== undefined && item.startsWith("{") ) {
             contatos.push(item);
         }
     }
@@ -61,7 +62,7 @@ $(document).ready(function () {
                             <img src="./img/edit_icon.png" 
                             class="edit px-2" alt="Edit icon" />
                         </a>
-                        <a href="./index.html"
+                        <a href="./contacts.html"
                             onclick=removeItem(getSelectedId(${contato.id}))>
                             <img src="./img/trash.png" 
                             class="trash px-2" alt="Trash icon" />    
@@ -71,39 +72,12 @@ $(document).ready(function () {
             </div>
         `);
         };
-	} else {
+    } else {
         section.append(`
-            <div class="row p-5 d-flex">
-                <div class="col-md-6 col-sm-12 pb-sm-5 pb-5 justify-content-center">
-                    <img
-                        class="mx-auto d-block my-2"
-                        src="./img/site-icon-512.png"
-                        alt="Agenda"
-                        id="agenda"
-                    />
-                </div>
-
-                <div class="col-md-6 col-sm-12 justify-content-center">
-                    <h1 class="d-flex-row mb-4 text-center">Agenda</h1>
-
-                    <ul class="list-group-flush">
-                        <li class="list-group-item">
-                            <a href="./create_contact.html" 
-                                class="text-reset">
-                                Inserir novo contato
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            Excluir contatos
-                        </li>
-                        <li class="list-group-item">
-                            Editar contatos
-                        </li>
-                        <li class="list-group-item">
-                            Visualizar todos os contatos
-                        </li>
-                    </ul>
-                </div>
+            <div class="m-5 p-5 h-100">
+                <h1 class="text-center">
+                    Não existem contatos cadastrados.
+                </h1>
             </div>
         `);
     };

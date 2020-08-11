@@ -37,6 +37,14 @@
 							Novo contato
 						</a>
 					</li>
+					<li class="nav-item mx-4">
+						<a
+							class="nav-link text-light"
+							href="./contacts.html"
+						>
+							Editar/excluir contatos
+						</a>
+					</li>
 				</div>
 			</ul>
 		</nav>
@@ -44,7 +52,7 @@
 		<section class="container-fluid my-5">
 			<h1 class="text-center">Novo contato</h1>
 			<div class="row justify-content-center">
-				<form method="POST" class="w-75" action="./index.html">
+				<form method="POST" class="w-75" action="./contacts.html">
 					<div class="form-group mb-4">
 						<label for="input-nome">Nome</label>
 						<input
@@ -53,40 +61,56 @@
 							id="input-nome"
 							class="form-control form-control-lg"
                             placeholder="Nome completo"
-                            required
-						/>
-					</div>
+                        />
+                        <div id="errorNome" class="alert-danger my-2 text-center">
+                            <p>Informe um nome válido</p>
+                        </div>
+                    </div>
 					<div class="form-group mb-4">
 						<label for="input-email">E-mail</label>
 						<input
-							type="email"
+							type="text"
 							name="email"
 							id="input-email"
 							class="form-control form-control-lg"
-							placeholder="E-mail"
-                            required
+                            placeholder="E-mail"
 						/>
+                        <div id="errorEmail" class="alert-danger my-2 text-center">
+                            <p>
+                                Informe um e-mail válido
+                            </p>                            
+                        </div>
 					</div>
 					<div class="form-group mb-4">
 						<label for="input-telefone">Telefone</label>
 						<input
-							type="tel"
+							type="text"
 							name="telefone"
 							id="input-telefone"
 							class="form-control form-control-lg"
-							placeholder="Telefone"
-                            required
+                            placeholder="(xx) xxxx-xxxx"
 						/>
+                        <div id="errorTel" class="alert-danger my-2 text-center">
+                            <p>
+                                Informe um telefone válido
+                            </p>                                                        
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-center">
+                    <div id="errorForm" class="alert-danger my-2 text-center">
+                        <p>
+                            O contato informado já existe.
+                        </p>                                                        
+                    </div>
+                    <div class="row d-flex justify-content-center">
                         <button type="submit"
-                                class="btn btn-lg btn-dark mt-4 w-50">
+                                class="btn btn-lg btn-dark mt-4 w-50"
+                                >
                             Salvar
                         </button>
                     </div>
                 </form>
             </div>
-		</section>
+        </section>
 
 		<footer class="navbar navbar-dark bg-dark text-light p-4 d-block text-center">
 			<h3>Desenvolvido por Anderson</h3>

@@ -37,6 +37,14 @@
 							Novo contato
 						</a>
 					</li>
+					<li class="nav-item mx-4">
+						<a
+							class="nav-link text-light"
+							href="./contacts.html"
+						>
+							Editar/excluir contatos
+						</a>
+					</li>
 				</div>
 			</ul>
 		</nav>
@@ -44,7 +52,7 @@
 		<section class="container-fluid my-5 px-sm-4 px-2">
 			<h1 class="text-center">Editar contato</h1>
 			<div class="row justify-content-center">
-				<form method="POST" action="./index.html" class="w-75">
+				<form method="POST" action="./contacts.html" class="w-75">
 					<div class="form-group mb-4">
 						<label for="input-nome">Nome</label>
 						<input
@@ -55,28 +63,41 @@
 							placeholder="Nome completo"
 							required
 						/>
+                        <div id="errorNome" class="alert-danger my-2 text-center">
+                            <p>Informe um nome válido</p>
+                        </div>
 					</div>
 					<div class="form-group mb-4">
 						<label for="input-email">E-mail</label>
 						<input
-							type="email"
+							type="text"
 							name="email"
 							id="input-email"
 							class="form-control form-control-lg"
 							placeholder="E-mail"
 							required
 						/>
+                        <div id="errorEmail" class="alert-danger my-2 text-center">
+                            <p>
+                                Informe um e-mail válido
+                            </p>                            
+                        </div>
 					</div>
 					<div class="form-group mb-4">
 						<label for="input-telefone">Telefone</label>
 						<input
-							type="tel"
+							type="text"
 							name="telefone"
 							id="input-telefone"
 							class="form-control form-control-lg"
 							placeholder="Telefone"
 							required
 						/>
+                        <div id="errorTel" class="alert-danger my-2 text-center">
+                            <p>
+                                Informe um telefone válido
+                            </p>                                                        
+                        </div>
 					</div>
                     <div class="d-flex justify-content-center">
                         <button type="submit"
