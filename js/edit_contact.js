@@ -1,3 +1,29 @@
+function validateForm(nome, email, telefone) {
+	const patternNome = /^[a-z ,.'-]+$/i;
+	const patternEmail = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/i;
+	const patternTelefone = /(0?[1-9]{2})*\D*(9?)\D?(\d{4})+\D?(\d{4})/;
+
+    let nameIsValid = patternNome.test(nome) &&
+                    nome.length >= 3 && nome.length < 75;
+    let emailIsValid = patternEmail.test(email) &&
+                    email.length > 10 && email.length < 75;
+    let telefoneIsValid = patternTelefone.test(telefone) &&
+                    telefone.length > 8 && telefone.length < 20;
+
+    if (nameIsValid && emailIsValid && telefoneIsValid) {
+        return true;
+    } else {
+        return [nameIsValid, emailIsValid, telefoneIsValid];
+    }
+}
+
+function save(id, nome, email, telefone) {
+    let contato = {
+        id, nome, email, telefone
+    };
+    localStorage.setItem(`${id}`, JSON.stringify(contato));    
+}
+
 $(document).ready(function () {
     let contatoID = localStorage.getItem("editID");
     let contato = JSON.parse(localStorage.getItem(contatoID));
@@ -11,26 +37,13 @@ $(document).ready(function () {
     $("#errorEmail").css("display", "none");
     $("#errorTel").css("display", "none");
 
-	const patternNome = /^[a-z ,.'-]+$/i;
-	const patternEmail = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/i;
-	const patternTelefone = /(0?[1-9]{2})*\D*(9?)\D?(\d{4})+\D?(\d{4})/;
-
     nome.val(contato.nome);
     email.val(contato.email);
     telefone.val(contato.telefone);
 
     btnSubmit.click(function () {
-		let nameIsValid =
-            patternNome.test(nome.val()) &&
-            nome.val().length >= 3 && nome.val().length < 75;
-		let emailIsValid =
-            patternEmail.test(email.val()) &&
-            email.val().length > 10 && email.val().length < 75;
-		let telefoneIsValid =
-            patternTelefone.test(telefone.val()) &&
-            telefone.val().length > 8 && telefone.val().length < 75;
-
-		if (nameIsValid && emailIsValid && telefoneIsValid) {
+        let formValid = validateForm(nome.val(), email.val(), telefone.val());
+		if ( formValid === true ) {
             if (nome.val() !== contato.nome) {
                 contato.nome = nome.val();
             }
@@ -40,26 +53,20 @@ $(document).ready(function () {
             if (telefone.val() !== contato.telefone) {
                 contato.telefone = telefone.val();
             }
-            localStorage.setItem(`${contatoID}`, JSON.stringify(contato));    
-        } else {
-            if (!nameIsValid) {
-                $("form").submit(function (e) { 
-                    e.preventDefault();
-                    $('#errorNome').show().fadeOut(5000);
-                });
+            save(contatoID, nome.val(), email.val(), telefone.val());
+		} else {
+            $('form').submit(function (event) {
+                event.preventDefault();
+            });
+			if (!formValid[0]) {
+                $("#errorNome").show().fadeOut(3000);
             }
-			else if (!emailIsValid) {
-                $("form").submit(function (e) { 
-                    e.preventDefault();
-                    $('#errorEmail').show().fadeOut(5000);
-                });
+			if (!formValid[1]) {
+                $("#errorEmail").show().fadeOut(3000);
 			}
-			else if (!telefoneIsValid) {
-                $("form").submit(function (e) { 
-                    e.preventDefault();
-                    $('#errorTel').show().fadeOut(5000);
-                });
-			}
-        }
+			if (!formValid[2]) {
+                $("#errorTel").show().fadeOut(3000);
+            }
+        }        
     });
 });

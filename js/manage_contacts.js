@@ -32,7 +32,7 @@ $(document).ready(function () {
     if (contatos.length > 0) {
         section.append(`
             <h1 class="text-center my-5">
-                Contatos
+                Editar/excluir contatos
             </h1>`);
         for (var i in contatos) {
             let contato = JSON.parse(contatos[i]);
@@ -62,7 +62,7 @@ $(document).ready(function () {
                             <img src="./img/edit_icon.png" 
                             class="edit px-2" alt="Edit icon" />
                         </a>
-                        <a href="./contacts.html"
+                        <a href="./list_contacts.html"
                             onclick=removeItem(getSelectedId(${contato.id}))>
                             <img src="./img/trash.png" 
                             class="trash px-2" alt="Trash icon" />    

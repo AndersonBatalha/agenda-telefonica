@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Novo contato</title>
+		<title>Editar/excluir contatos</title>
 
 		<link rel="stylesheet" href="./css/bootstrap.min.css" />
 		<link rel="stylesheet" href="./css/style.css" />
@@ -15,9 +15,9 @@
 
 		<script src="./js/jquery-3.5.1.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
-		<script src="./js/create_contact.js"></script>
+        <script src="./js/manage_contacts.js"></script>
 	</head>
-	<body class="h-100">
+	<body>
 		<nav class="navbar navbar-dark bg-dark">
 			<a class="navbar-brand p-2" href="./index.html">
 				<img
@@ -57,67 +57,7 @@
 			</ul>
 		</nav>
 
-		<section class="container-fluid my-5">
-			<h1 class="text-center">Novo contato</h1>
-			<div class="row justify-content-center">
-				<form method="POST" class="w-75" action="./list_contacts.html">
-					<div class="form-group mb-4">
-						<label for="input-nome">Nome</label>
-						<input
-							type="text"
-							name="nome"
-							id="input-nome"
-							class="form-control form-control-lg"
-                            placeholder="Nome completo"
-                        />
-                        <div id="errorNome" class="alert-danger my-2 text-center">
-                            <p>Informe um nome válido</p>
-                        </div>
-                    </div>
-					<div class="form-group mb-4">
-						<label for="input-email">E-mail</label>
-						<input
-							type="text"
-							name="email"
-							id="input-email"
-							class="form-control form-control-lg"
-                            placeholder="E-mail"
-						/>
-                        <div id="errorEmail" class="alert-danger my-2 text-center">
-                            <p>
-                                Informe um e-mail válido
-                            </p>                            
-                        </div>
-					</div>
-					<div class="form-group mb-4">
-						<label for="input-telefone">Telefone</label>
-						<input
-							type="text"
-							name="telefone"
-							id="input-telefone"
-							class="form-control form-control-lg"
-                            placeholder="(xx) xxxx-xxxx"
-						/>
-                        <div id="errorTel" class="alert-danger my-2 text-center">
-                            <p>
-                                Informe um telefone válido
-                            </p>                                                        
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <button type="submit"
-                                class="btn btn-lg btn-dark mt-4 w-50"
-                                >
-                            Salvar
-                        </button>
-                    </div>
-                    <div id="errorForm" class="alert-danger my-2 text-center">
-                        <p>
-                            O contato informado já existe.
-                        </p>                                                        
-                    </div>
-                </form>
-            </div>
+		<section class="container-fluid mr-auto">
         </section>
 
 		<footer class="navbar navbar-dark bg-dark text-light p-4 d-block text-center">

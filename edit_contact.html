@@ -32,6 +32,14 @@
 					<li class="nav-item mx-4">
 						<a
 							class="nav-link text-light"
+							href="./list_contacts.html"
+						>
+							Meus contatos
+						</a>
+					</li>
+					<li class="nav-item mx-4">
+						<a
+							class="nav-link text-light"
 							href="./create_contact.html"
 						>
 							Novo contato
@@ -40,7 +48,7 @@
 					<li class="nav-item mx-4">
 						<a
 							class="nav-link text-light"
-							href="./contacts.html"
+							href="./manage_contacts.html"
 						>
 							Editar/excluir contatos
 						</a>
@@ -52,7 +60,7 @@
 		<section class="container-fluid my-5 px-sm-4 px-2">
 			<h1 class="text-center">Editar contato</h1>
 			<div class="row justify-content-center">
-				<form method="POST" action="./contacts.html" class="w-75">
+				<form method="POST" class="w-75" action="./list_contacts.html">
 					<div class="form-group mb-4">
 						<label for="input-nome">Nome</label>
 						<input
@@ -104,6 +112,11 @@
                                 class="btn btn-lg btn-dark mt-4 w-50">
 	    					Salvar
 		    			</button>
+                    </div>
+                    <div id="errorForm" class="alert-danger my-2 text-center">
+                        <p>
+                            O contato informado já existe.
+                        </p>                                                        
                     </div>
 				</form>
 			</div>
