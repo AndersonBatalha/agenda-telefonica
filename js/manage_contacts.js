@@ -74,7 +74,7 @@ $(document).ready(function () {
         };
     } else {
         section.append(`
-            <div class="m-5 p-5 h-100">
+            <div class="m-5 p-5 h-100 d-flex justify-content-center">
                 <h1 class="text-center">
                     Não existem contatos cadastrados.
                 </h1>

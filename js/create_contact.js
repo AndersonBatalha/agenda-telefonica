@@ -53,13 +53,14 @@ $(document).ready(function () {
 	let nome = $("#input-nome");
 	let telefone = $("#input-telefone");
     let email = $("#input-email");
+    let btnSubmit = $("button[type='submit']");
 
     $("#errorNome").css("display", "none");
     $("#errorEmail").css("display", "none");
     $("#errorTel").css("display", "none");
     $("#errorForm").css("display", "none");
     
-    $("button").click(function (event) {
+    btnSubmit.click(function (event) {
         let formValid = validateForm(nome.val(), email.val(), telefone.val());
         if ( formValid === true ) {
             let contatos = loadContacts().map(contato => JSON.parse(contato));
