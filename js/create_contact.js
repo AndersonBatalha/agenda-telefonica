@@ -10,7 +10,7 @@ function loadContacts() {
 	if (contatos === null) {
 		return [];
 	} else {
-		return contatos;
+        return contatos;
 	}
 }
 
@@ -41,8 +41,15 @@ function save(nome, email, telefone) {
     localStorage.setItem(`${id}`, JSON.stringify(contato));    
 }
 
-$(document).ready(function () {
+function contactExists(array, nome, email, telefone) {
+    return array.filter(contato => 
+        contato.nome === nome || 
+        contato.email === email ||
+        contato.telefone === telefone
+    ).length > 0;
+}
 
+$(document).ready(function () {
 	let nome = $("#input-nome");
 	let telefone = $("#input-telefone");
     let email = $("#input-email");
@@ -51,17 +58,23 @@ $(document).ready(function () {
     $("#errorEmail").css("display", "none");
     $("#errorTel").css("display", "none");
     $("#errorForm").css("display", "none");
-  
-	$("button").click(function () {
+    
+    $("button").click(function (event) {
         let formValid = validateForm(nome.val(), email.val(), telefone.val());
-        console.log(formValid);
-		if ( formValid === true ) {
-            save(nome.val(), email.val(), telefone.val());
-		} else {
-            $('form').submit(function (event) {
+        if ( formValid === true ) {
+            let contatos = loadContacts().map(contato => JSON.parse(contato));
+            let exists = contactExists(contatos, nome.val(), email.val(), telefone.val());
+
+            if (exists) {
                 event.preventDefault();
-            });
-			if (!formValid[0]) {
+                $("#errorForm").show().fadeOut(3000);
+            }
+            else {
+                save(nome.val(), email.val(), telefone.val());
+            }
+		} else {
+            event.preventDefault();
+ 			if (!formValid[0]) {
                 $("#errorNome").show().fadeOut(3000);
             }
 			if (!formValid[1]) {

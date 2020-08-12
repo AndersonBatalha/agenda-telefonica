@@ -7,18 +7,15 @@
 
 		<link rel="stylesheet" href="./css/bootstrap.min.css" />
 		<link rel="stylesheet" href="./css/style.css" />
-		<link
-			rel="shortcut icon"
-			href="./img/site-icon.png"
-			type="image/x-icon"
-		/>
+		<link rel="shortcut icon" href="./img/site-icon.png"
+			type="image/x-icon" />
 
 		<script src="./js/jquery-3.5.1.min.js"></script>
 		<script src="./js/bootstrap.min.js"></script>
 		<script src="./js/create_contact.js"></script>
 	</head>
 	<body class="h-100">
-		<nav class="navbar navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg bg-dark">
 			<a class="navbar-brand p-2" href="./index.html">
 				<img
 					src="./img/agenda_icon_129512.png"
@@ -26,35 +23,38 @@
 					class="icon"
 				/>
 			</a>
-
-			<ul class="navbar-nav mr-auto">
-				<div class="row">
-					<li class="nav-item mx-4">
-						<a
-							class="nav-link text-light"
-							href="./list_contacts.html"
-						>
-							Meus contatos
-						</a>
-					</li>
-					<li class="nav-item mx-4">
-						<a
-							class="nav-link text-light"
-							href="./create_contact.html"
-						>
-							Novo contato
-						</a>
-					</li>
-					<li class="nav-item mx-4">
-						<a
-							class="nav-link text-light"
-							href="./manage_contacts.html"
-						>
-							Editar/excluir contatos
-						</a>
-					</li>
-				</div>
-			</ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <ion-icon id="menu" name="menu"></ion-icon>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item mx-4">
+                        <a
+                            class="nav-link text-light"
+                            href="./list_contacts.html"
+                        >
+                            Meus contatos
+                        </a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a
+                            class="nav-link text-light"
+                            href="./create_contact.html"
+                        >
+                            Novo contato
+                        </a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a
+                            class="nav-link text-light"
+                            href="./manage_contacts.html"
+                        >
+                            Editar/excluir contatos
+                        </a>
+                    </li>
+                </ul>    
+            </div>
 		</nav>
 
 		<section class="container-fluid my-5">
@@ -68,12 +68,13 @@
 							name="nome"
 							id="input-nome"
 							class="form-control form-control-lg"
-                            placeholder="Nome completo"
-                        />
-                        <div id="errorNome" class="alert-danger my-2 text-center">
-                            <p>Informe um nome válido</p>
-                        </div>
-                    </div>
+							placeholder="Nome completo"
+						/>
+						<div id="errorNome"
+							class="alert-danger my-2 text-center">
+							<p>Informe um nome válido</p>
+						</div>
+					</div>
 					<div class="form-group mb-4">
 						<label for="input-email">E-mail</label>
 						<input
@@ -81,13 +82,14 @@
 							name="email"
 							id="input-email"
 							class="form-control form-control-lg"
-                            placeholder="E-mail"
+							placeholder="E-mail"
 						/>
-                        <div id="errorEmail" class="alert-danger my-2 text-center">
-                            <p>
-                                Informe um e-mail válido
-                            </p>                            
-                        </div>
+						<div id="errorEmail"
+							class="alert-danger my-2 text-center">
+							<p>
+								Informe um e-mail válido
+							</p>
+						</div>
 					</div>
 					<div class="form-group mb-4">
 						<label for="input-telefone">Telefone</label>
@@ -96,41 +98,36 @@
 							name="telefone"
 							id="input-telefone"
 							class="form-control form-control-lg"
-                            placeholder="(xx) xxxx-xxxx"
-						/>
-                        <div id="errorTel" class="alert-danger my-2 text-center">
-                            <p>
-                                Informe um telefone válido
-                            </p>                                                        
-                        </div>
-                    </div>
+							placeholder="(xx) xxxx-xxxx" />
+						<div id="errorTel"
+							class="alert-danger my-2 text-center">
+							<p>
+								Informe um telefone válido
+							</p>
+						</div>
+					</div>
+                    <div id="errorForm" class="alert-danger my-2 text-center">
+						<p>
+							Os dados do contato já existem.
+						</p>
+					</div>
                     <div class="row d-flex justify-content-center">
-                        <button type="submit"
-                                class="btn btn-lg btn-dark mt-4 w-50"
-                                >
+                        <button type="submit" class="btn btn-lg btn-dark mt-4 w-50">
                             Salvar
                         </button>
                     </div>
-                    <div id="errorForm" class="alert-danger my-2 text-center">
-                        <p>
-                            O contato informado já existe.
-                        </p>                                                        
-                    </div>
-                </form>
-            </div>
-        </section>
+				</form>
+			</div>
+		</section>
 
 		<footer class="navbar navbar-dark bg-dark text-light p-4 d-block text-center">
 			<h3>Desenvolvido por Anderson</h3>
-			<div class="row mt-4 mb-2 ">
+			<div class="row mt-4 mb-2">
 				<div class="px-2 col-12 col-sm-4 col-md-4 col-xl-2 col-lg-2">
 					<h5>
 						<ion-icon name="call"></ion-icon>
-						<a
-							href="tel:47992514997"
-							class="text-reset text-decoration-none"
-							target="_blank"
-						>
+						<a href="tel:47992514997"
+							class="text-reset text-decoration-none" target="_blank">
 							Telefone
 						</a>
 					</h5>
@@ -138,11 +135,8 @@
 				<div class="px-2 col-12 col-sm-4 col-md-4 col-xl-2 col-lg-2">
 					<h5>
 						<ion-icon name="mail"></ion-icon>
-						<a
-							href="email:andersonpbatalha@gmail.com"
-							class="text-reset text-decoration-none"
-							target="_blank"
-						>
+						<a href="email:andersonpbatalha@gmail.com"
+							class="text-reset text-decoration-none" target="_blank">
 							E-mail
 						</a>
 					</h5>
@@ -150,11 +144,8 @@
 				<div class="px-2 col-12 col-sm-4 col-md-4 col-xl-2 col-lg-2">
 					<h5>
 						<ion-icon name="logo-github"></ion-icon>
-						<a
-							href="https://github.com/AndersonBatalha"
-							class="text-reset text-decoration-none"
-							target="_blank"
-						>
+						<a href="https://github.com/AndersonBatalha"
+							class="text-reset text-decoration-none" target="_blank">
 							GitHub
 						</a>
 					</h5>
@@ -162,11 +153,8 @@
 				<div class="px-2 col-12 col-sm-4 col-md-4 col-xl-2 col-lg-2">
 					<h5>
 						<ion-icon name="logo-linkedin"></ion-icon>
-						<a
-							href="https://www.linkedin.com/in/anderson-pontes-batalha/"
-							class="text-reset text-decoration-none"
-							target="_blank"
-						>
+						<a href="https://www.linkedin.com/in/anderson-pontes-batalha/"
+							class="text-reset text-decoration-none" target="_blank">
 							Linkedin
 						</a>
 					</h5>
@@ -174,11 +162,8 @@
 				<div class="px-2 col-12 col-sm-4 col-md-4 col-xl-2 col-lg-2">
 					<h5>
 						<ion-icon name="logo-facebook"></ion-icon>
-						<a
-							href="https://www.facebook.com/profile.php?id=100002347075937"
-							class="text-reset text-decoration-none"
-							target="_blank"
-						>
+						<a href="https://www.facebook.com/profile.php?id=100002347075937"
+							class="text-reset text-decoration-none" target="_blank">
 							Facebook
 						</a>
 					</h5>
@@ -186,11 +171,8 @@
 				<div class="px-2 col-12 col-sm-4 col-md-4 col-xl-2 col-lg-2">
 					<h5>
 						<ion-icon name="logo-twitter"></ion-icon>
-						<a
-							href="https://twitter.com/BatalhaAnderson"
-							class="text-reset text-decoration-none"
-							target="_blank"
-						>
+						<a href="https://twitter.com/BatalhaAnderson"
+							class="text-reset text-decoration-none" target="_blank">
 							Twitter
 						</a>
 					</h5>
@@ -198,6 +180,7 @@
 			</div>
 		</footer>
 
-		<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js">
+        </script>
 	</body>
 </html>

@@ -17,7 +17,7 @@
 		<script src="./js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<nav class="navbar navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg bg-dark">
 			<a class="navbar-brand p-2" href="./index.html">
 				<img
 					src="./img/agenda_icon_129512.png"
@@ -25,40 +25,43 @@
 					class="icon"
 				/>
 			</a>
-
-			<ul class="navbar-nav mr-auto">
-				<div class="row">
-					<li class="nav-item mx-4">
-						<a
-							class="nav-link text-light"
-							href="./list_contacts.html"
-						>
-							Meus contatos
-						</a>
-					</li>
-					<li class="nav-item mx-4">
-						<a
-							class="nav-link text-light"
-							href="./create_contact.html"
-						>
-							Novo contato
-						</a>
-					</li>
-					<li class="nav-item mx-4">
-						<a
-							class="nav-link text-light"
-							href="./manage_contacts.html"
-						>
-							Editar/excluir contatos
-						</a>
-					</li>
-				</div>
-			</ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <ion-icon id="menu" name="menu"></ion-icon>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item mx-4">
+                        <a
+                            class="nav-link text-light"
+                            href="./list_contacts.html"
+                        >
+                            Meus contatos
+                        </a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a
+                            class="nav-link text-light"
+                            href="./create_contact.html"
+                        >
+                            Novo contato
+                        </a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a
+                            class="nav-link text-light"
+                            href="./manage_contacts.html"
+                        >
+                            Editar/excluir contatos
+                        </a>
+                    </li>
+                </ul>    
+            </div>
 		</nav>
 
 		<section class="container-fluid mr-auto">
             <div class="row p-5 d-flex">
-                <div class="col-md-6 col-sm-12 pb-sm-5 pb-5 justify-content-center">
+                <div class="col-md-6 col-sm-12 col-md-3 pb-sm-5 pb-5 justify-content-center">
                     <img
                         class="mx-auto d-block my-2"
                         src="./img/site-icon-512.png"
@@ -67,7 +70,7 @@
                     />
                 </div>
 
-                <div class="col-md-6 col-sm-12 justify-content-center">
+                <div class="col-md-6 col-sm-12 col-md-3 justify-content-center">
                     <h1 class="d-flex-row mb-4 text-center">Agenda</h1>
 
                     <ul class="list-group-flush">

@@ -1,3 +1,19 @@
+function loadContacts() {
+    var contatos = [];
+    const keys = Object.keys(localStorage);
+    for (var i = 0; i <= keys.length; i++) {
+        let item = localStorage.getItem(parseInt(keys[i]));
+        if ( item !== null && item !== undefined && item.startsWith("{") ) {
+            contatos.push(item);
+        }
+    }
+	if (contatos === null) {
+		return [];
+	} else {
+        return contatos;
+	}
+}
+
 function validateForm(nome, email, telefone) {
 	const patternNome = /^[a-z ,.'-]+$/i;
 	const patternEmail = /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/i;
@@ -24,6 +40,14 @@ function save(id, nome, email, telefone) {
     localStorage.setItem(`${id}`, JSON.stringify(contato));    
 }
 
+function contactExists(array, nome, email, telefone) {
+    return array.filter(contato => 
+        contato.nome === nome || 
+        contato.email === email ||
+        contato.telefone === telefone
+    ).length > 0;
+}
+
 $(document).ready(function () {
     let contatoID = localStorage.getItem("editID");
     let contato = JSON.parse(localStorage.getItem(contatoID));
@@ -36,28 +60,36 @@ $(document).ready(function () {
     $("#errorNome").css("display", "none");
     $("#errorEmail").css("display", "none");
     $("#errorTel").css("display", "none");
+    $("#errorForm").css("display", "none");
 
     nome.val(contato.nome);
     email.val(contato.email);
     telefone.val(contato.telefone);
 
-    btnSubmit.click(function () {
+    btnSubmit.click(function (event) {
         let formValid = validateForm(nome.val(), email.val(), telefone.val());
 		if ( formValid === true ) {
-            if (nome.val() !== contato.nome) {
-                contato.nome = nome.val();
-            }
-            if (email.val() !== contato.email) {
-                contato.email = email.val();
-            }
-            if (telefone.val() !== contato.telefone) {
-                contato.telefone = telefone.val();
-            }
-            save(contatoID, nome.val(), email.val(), telefone.val());
-		} else {
-            $('form').submit(function (event) {
+            let contatos = loadContacts().map(contato => JSON.parse(contato));
+            let exists = contactExists(contatos, nome.val(), email.val(), telefone.val());
+
+            if (exists) {
                 event.preventDefault();
-            });
+                $("#errorForm").show().fadeOut(3000);
+            }
+            else {
+                if (nome.val() !== contato.nome) { 
+                    contato.nome = nome.val(); 
+                }
+                if (email.val() !== contato.email) { 
+                    contato.email = email.val(); 
+                }
+                if (telefone.val() !== contato.telefone) {
+                     contato.telefone = telefone.val(); 
+                }
+                save(contatoID, nome.val(), email.val(), telefone.val());
+            }
+		} else {
+            event.preventDefault();
 			if (!formValid[0]) {
                 $("#errorNome").show().fadeOut(3000);
             }

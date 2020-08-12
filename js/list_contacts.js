@@ -10,7 +10,7 @@ function loadContacts() {
 	if (contatos === null) {
 		return [];
 	} else {
-		return contatos;
+        return contatos;
 	}
 }
 
