@@ -75,8 +75,13 @@ $(document).ready(function () {
     } else {
         section.append(`
             <div class="m-5 p-5 h-100 d-flex justify-content-center">
-                <h1 class="text-center">
-                    Não existem contatos cadastrados.
+                <h1 class="text-center"> 
+                    <div class="row d-flex justify-content-center">
+                        <ion-icon class="info" name="information-circle"></ion-icon>
+                    </div>
+                    <div class="row">               
+                        <p>Não existem contatos cadastrados.</p>
+                    </div>
                 </h1>
             </div>
         `);
